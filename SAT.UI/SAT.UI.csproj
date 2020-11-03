@@ -168,12 +168,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursController.cs" />
+    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\ScheduledClassesController.cs" />
+    <Compile Include="Controllers\ScheduledClassStatusController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\StudentStatusController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +192,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\OG_bootstrap.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="App_Data\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -202,6 +212,8 @@
     <Content Include="Scripts\OG_jquery-3.3.1.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -212,7 +224,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_OGLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -343,7 +355,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="packages.config" />
-    <Content Include="Views\Shared\OG_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="_archive\fonts\appton.eot" />
     <Content Include="_archive\fonts\appton.ttf" />
     <Content Include="_archive\fonts\appton.woff" />
@@ -355,6 +367,53 @@
     <Content Include="_archive\vendor\jquery.cookie\component.json" />
     <Content Include="_archive\vendor\jquery.cookie\cookie.jquery.json" />
     <Content Include="_archive\vendor\popper.js\umd\poppper.js.flow" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Cours\Create.cshtml" />
+    <Content Include="Views\Cours\Delete.cshtml" />
+    <Content Include="Views\Cours\Details.cshtml" />
+    <Content Include="Views\Cours\Edit.cshtml" />
+    <Content Include="Views\Cours\Index.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
+    <Content Include="Views\ScheduledClasses\Create.cshtml" />
+    <Content Include="Views\ScheduledClasses\Delete.cshtml" />
+    <Content Include="Views\ScheduledClasses\Details.cshtml" />
+    <Content Include="Views\ScheduledClasses\Edit.cshtml" />
+    <Content Include="Views\ScheduledClasses\Index.cshtml" />
+    <Content Include="Views\ScheduledClassStatus\Create.cshtml" />
+    <Content Include="Views\ScheduledClassStatus\Delete.cshtml" />
+    <Content Include="Views\ScheduledClassStatus\Details.cshtml" />
+    <Content Include="Views\ScheduledClassStatus\Edit.cshtml" />
+    <Content Include="Views\ScheduledClassStatus\Index.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\StudentStatus\Create.cshtml" />
+    <Content Include="Views\StudentStatus\Delete.cshtml" />
+    <Content Include="Views\StudentStatus\Details.cshtml" />
+    <Content Include="Views\StudentStatus\Edit.cshtml" />
+    <Content Include="Views\StudentStatus\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAT.DATA.EF\SAT.DATA.EF.csproj">
+      <Project>{d7b87cda-da88-4fea-bfba-7cd6bfc8e9f3}</Project>
+      <Name>SAT.DATA.EF</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

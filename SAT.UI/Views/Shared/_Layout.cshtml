@@ -42,36 +42,52 @@
                             <a id="pages" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown</a>
                             <div class="dropdown-menu"><a href="faq.html" class="dropdown-item">FAQ</a><a href="contact.html" class="dropdown-item">Contact</a><a href="text.html" class="dropdown-item">Text Page</a></div>
                         </li>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                            <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                        }
                     </ul><a href="#" data-toggle="modal" data-target="#login" class="btn btn-primary navbar-btn ml-0 ml-lg-3">Login </a>
                 </div>
             </div>
         </nav>
     </header>
     <!-- Login Modal-->
-    <div id="login" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade bd-example-modal-lg">
-        <div role="document" class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-0">
-                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body p-4 p-lg-5">
-                    <form action="#" class="login-form text-left">
-                        <div class="form-group mb-4">
-                            <label>Email address</label>
-                            <input type="email" name="email" placeholder="name@company.com" class="form-control">
-                        </div>
-                        <div class="form-group mb-4">
-                            <label>Password</label>
-                            <input type="password" name="password" placeholder="Min 8 characters" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Login" class="btn btn-primary">
-                        </div>
-                    </form>
+    @if (!Request.IsAuthenticated)
+    {
+        <div id="login" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade bd-example-modal-lg">
+            <div role="document" class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body p-4 p-lg-5">
+                        <form action="#" class="login-form text-left">
+                            <div class="form-group mb-4">
+                                <label>Email address</label>
+                                <input type="email" name="email" placeholder="name@company.com" class="form-control">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Min 8 characters" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login" class="btn btn-primary">
+                            </div>
+                            <div class="form-group">
+                                @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-primary" })
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
+    @if (Request.IsAuthenticated)
+    {
+
+    }
+
     <div class="hero">@RenderBody()</div>
     <footer class="main-footer">
         <div class="container">

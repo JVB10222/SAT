@@ -1,11 +1,10 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace SAT.UI
+namespace IdentitySample
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -35,31 +34,3 @@ namespace SAT.UI
         }
     }
 }
-
-
- //<!-- JavaScript files-->
- //   <script src = "vendor/jquery/jquery.min.js" ></ script >
- //   < script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- //   <script src = "vendor/jquery.cookie/jquery.cookie.js" > </ script >
- //   < script src="vendor/lightbox2/js/lightbox.js"></script>
- //   <script src = "js/front.js" ></ script >
-
-//<!-- Bootstrap CSS-->
-//    <link rel = "stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-//    <!-- Font Awesome CSS-->
-//    <link rel = "stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-//    <!-- Google fonts - Poppins-->
-//    <link rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600">
-//    <!-- Lightbox-->
-//    <link rel = "stylesheet" href="vendor/lightbox2/css/lightbox.css">
-//    <!-- Custom font icons-->
-//    <link rel = "stylesheet" href="css/fontastic.css">
-//    <!-- theme stylesheet-->
-//    <link rel = "stylesheet" href="css/style.default.css" id="theme-stylesheet">
-//    <!-- Custom stylesheet - for your changes-->
-//    <link rel = "stylesheet" href="css/custom.css">
-//    <!-- Favicon-->
-//    <link rel = "shortcut icon" href="img/favicon.png">
-//    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-//        <script src = "https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js" ></ script >
-//        < script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
