@@ -127,13 +127,20 @@
         </div>*@
 
 
-    <div class="hero">@RenderBody()</div>
+    <div class="hero shell">@RenderBody()</div>
     <footer class="main-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 mb-5 mb-lg-0">
                     @* ToDo2 Add logo here *@
                     @*<div class="footer-logo"><img src="img/logo-footer.svg" alt="..." class="img-fluid"></div>*@
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                    <ul class="navbar-nav " >
+                        <li >@Html.ActionLink("Roles", "Index", "RolesAdmin" , new { @class = "nav-item nav-link" })</li>
+                        <li >@Html.ActionLink("Users", "Index", "UsersAdmin", new {@class = "nav-item nav-link" } )</li>
+                    </ul>
+                    }
                 </div>
             </div>
         </div>

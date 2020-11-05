@@ -33,9 +33,9 @@ namespace SAT.DATA.EF
         [StringLength(60, ErrorMessage = "* Email can only be a max of 60 characters.")]
         [Required(ErrorMessage = "* Email is REQUIRED")]
         public string Email { get; set; }
-        [Display(Name = "Phone URL")]
-        [StringLength(100, ErrorMessage = "* Phone URL can only be a max of 100 characters.")]
-        public string PhoneUrl { get; set; }
+        [Display(Name = "Image")]
+        [StringLength(100, ErrorMessage = "* Photo URL can only be a max of 100 characters.")]
+        public string PhotoUrl { get; set; }
         [Required(ErrorMessage = "* Student Status is REQUIRED")]
         [Display(Name = "Student Status")]
         public int SSID { get; set; }

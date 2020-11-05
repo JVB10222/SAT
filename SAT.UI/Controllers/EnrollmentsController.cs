@@ -39,8 +39,8 @@ namespace SAT.UI.Controllers
         // GET: Enrollments/Create
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstructorName");
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "FirstName");
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "ScheduledClassString");
+            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "studentFullname");
             return View();
         }
 
@@ -75,8 +75,8 @@ namespace SAT.UI.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstructorName", enrollment.ScheduledClassId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "ScheduledClassString", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "studentFullname", enrollment.StudentId);
             return View(enrollment);
         }
 

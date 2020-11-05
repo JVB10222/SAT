@@ -11,19 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.studentFullname)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => model.studentFullname)
         </dd>
 
         <dt>
@@ -83,11 +75,12 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneUrl)
+            @Html.DisplayNameFor(model => model.PhotoUrl)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhoneUrl)
+            @*@Html.DisplayFor(model => model.PhotoUrl)*@
+            <img src="~/Content/img/@Model.PhotoUrl" alt="@Model.studentFullname" />
         </dd>
 
         <dt>
