@@ -136,10 +136,15 @@
                     @*<div class="footer-logo"><img src="img/logo-footer.svg" alt="..." class="img-fluid"></div>*@
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                    <ul class="navbar-nav " >
-                        <li >@Html.ActionLink("Roles", "Index", "RolesAdmin" , new { @class = "nav-item nav-link" })</li>
-                        <li >@Html.ActionLink("Users", "Index", "UsersAdmin", new {@class = "nav-item nav-link" } )</li>
-                    </ul>
+                        <ul class="navbar-nav ">
+                            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin", new { @class = "nav-item nav-link" })</li>
+                            <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin", new { @class = "nav-item nav-link" })</li>
+                            <li>
+                                <div>
+                                    Documentation<a href="~/Content/DocumentationSAT.pdf">~/Content/DocumentationSAT.pdf</a>
+                                </div>
+                            </li>
+                        </ul>
                     }
                 </div>
             </div>
